@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base URL for all API calls
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;//http://localhost:5000/api/dashboard
+const API_BASE_URL ="https://xeno-assignment-production.up.railway.app";//http://localhost:5000/api/dashboard
 
 
 // Create an Axios instance with default configurations
