@@ -26,8 +26,8 @@ const Dashboard = () => {
     }, []);
 
     const handleLogout = () => {
-        window.location.href = "http://localhost:5000/auth/logout";
-    };
+    window.location.href = "https://xeno-assignment-production.up.railway.app/auth/logout";
+};
 
     if (loading) {
         return <div style={{ textAlign: "center", marginTop: "20%" }}>Loading...</div>;
