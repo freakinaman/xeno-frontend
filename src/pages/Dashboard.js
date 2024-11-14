@@ -10,26 +10,25 @@ const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-const fetchUser = async () => {
-    try {
-        const response = await getUserDetails(); // API call to fetch user details
-        console.log("User details response:", response.data); // Debug the API response
-        setUser(response.data);
-    } catch (err) {
-        console.error("Failed to fetch user:", err.message);
-    } finally {
-        setLoading(false);
-    }
-};
-
+    const fetchUser = async () => {
+        try {
+            const response = await getUserDetails(); // API call to fetch user details
+            console.log("User details response:", response.data); // Debug API response
+            setUser(response.data);
+        } catch (err) {
+            console.error("Failed to fetch user:", err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
         fetchUser();
     }, []);
 
     const handleLogout = () => {
-    window.location.href = "https://xeno-assignment-production.up.railway.app/auth/logout";
-};
+        window.location.href = "https://xeno-assignment-production.up.railway.app/auth/logout";
+    };
 
     if (loading) {
         return <div style={{ textAlign: "center", marginTop: "20%" }}>Loading...</div>;
@@ -62,7 +61,9 @@ const fetchUser = async () => {
                 <Text style={{ fontSize: "24px", marginBottom: "20px" }}>
                     Hello, <strong>{user?.displayName || "User"}</strong>!
                 </Text>
-                <p style={{ fontSize: "22px", marginBottom: "15px" }}>Email: {user?.email || "Not provided"}</p>
+                <p style={{ fontSize: "22px", marginBottom: "15px" }}>
+                    Email: {user?.email || "Not provided"}
+                </p>
                 <p style={{ fontSize: "20px", color: "#666", marginBottom: "30px" }}>
                     Explore your campaigns and message logs below:
                 </p>
@@ -98,24 +99,24 @@ const fetchUser = async () => {
                             margin: "20px",
                             fontSize: "18px",
                             padding: "15px 30px",
-                            height: "40px", 
+                            height: "40px",
                         }}
                         onClick={() => navigate("/audience-builder")}
                     >
                         Audience Builder
                     </Button>
-                <div>
-                    <Button
-                        danger
-                        style={{
-                            margin: "20px",
-                            fontSize: "18px",
-                            padding: "15px 30px",
-                        }}
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </Button>
+                    <div>
+                        <Button
+                            danger
+                            style={{
+                                margin: "20px",
+                                fontSize: "18px",
+                                padding: "15px 30px",
+                            }}
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </Button>
                     </div>
                 </div>
             </Card>
