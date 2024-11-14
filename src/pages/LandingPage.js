@@ -2,8 +2,9 @@ import React from "react";
 
 const LandingPage = () => {
     const handleLogin = () => {
-        window.location.href = "http://localhost:5000/auth/google"; // Redirect to Google OAuth
+    window.location.href = "https://xeno-assignment-production.up.railway.app/auth/google"; // Redirect to the deployed backend for Google OAuth
     };
+
 
     return (
         <div style={{ textAlign: "center", marginTop: "100px" }}>
