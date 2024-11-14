@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CampaignsList from "./pages/CampaignsList";
+import CampaignStats from "./pages/CampaignStats";
+import CreateCampaign from "./pages/CreateCampaign";
+import MessageLogs from "./pages/MessageLogs";
+import SendMessages from "./pages/SendMessages"; // Import the new page
+import Dashboard from "./pages/Dashboard"; // Add Dashboard Page
+import LandingPage from "./pages/LandingPage"; // Add Landing Page
+import AudienceBuilder from "./pages/AudienceBuilder";
 
-function App() {
+import "./App.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <Routes>
+              <Route path="/" element={<LandingPage />} /> {/* Landing Page */}
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/campaigns" element={<CampaignsList />} />
+              <Route path="/create" element={<CreateCampaign />} />
+              <Route path="/campaigns/:id" element={<CampaignStats />} />
+              <Route path="/logs" element={<MessageLogs />} />
+              <Route path="/send/:id" element={<SendMessages />} />
+              <Route path="/audience-builder" element={<AudienceBuilder />} />
+
+          </Routes>
+      </Router>
   );
-}
+};
 
 export default App;
