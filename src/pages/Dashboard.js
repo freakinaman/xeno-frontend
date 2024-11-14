@@ -10,17 +10,18 @@ const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    const fetchUser = async () => {
-        try {
-            const response = await getUserDetails(); // API call to fetch user details
-            console.log("User details response:", response.data); // Debug API response
-            setUser(response.data);
-        } catch (err) {
-            console.error("Failed to fetch user:", err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+const fetchUser = async () => {
+    try {
+        const response = await getUserDetails(); // API call to fetch user details
+        console.log("User data:", response.data); // Add this to debug response
+        setUser(response.data);
+    } catch (err) {
+        console.error("Failed to fetch user:", err.message);
+        console.error(err.response); // Add this to debug the error response
+    } finally {
+        setLoading(false);
+    }
+};
 
     useEffect(() => {
         fetchUser();
