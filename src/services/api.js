@@ -6,7 +6,7 @@ const API_BASE_URL ="https://xeno-assignment-production.up.railway.app/api";//ht
 
 // Create an Axios instance with default configurations
 export const api = axios.create({
-    baseURL: API_BASE_URL,
+    baseURL: "https://xeno-assignment-production.up.railway.app/api",
     headers: {
         "Content-Type": "application/json",
     },
