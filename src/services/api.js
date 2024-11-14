@@ -4,6 +4,7 @@ import axios from "axios";
 const API_BASE_URL ="https://xeno-assignment-production.up.railway.app/api";//http://localhost:5000/api/dashboard
 
 
+
 // Create an Axios instance with default configurations
 export const api = axios.create({
     baseURL: "https://xeno-assignment-production.up.railway.app/api",
@@ -15,12 +16,8 @@ export const api = axios.create({
 
 // Dashboard API to fetch user details
 export const getUserDetails = async () => {
-    return axios.get(
-        "https://xeno-assignment-production.up.railway.app/api/dashboard",
-        { withCredentials: true } // Ensures cookies are sent with the request
-    );
+    return api.get("/dashboard"); // Use the `api` instance to make the request
 };
-
 
 // Campaigns-related endpoints
 export const getCampaigns = () => api.get("/campaigns");
