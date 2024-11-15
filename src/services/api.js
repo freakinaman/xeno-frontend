@@ -16,10 +16,7 @@ export const api = axios.create({
 
 // Dashboard API to fetch user details
 export const getUserDetails = async () => {
-    return axios.get(
-        "https://xeno-assignment-production.up.railway.app/api/dashboard",
-        { withCredentials: true } // Ensure cookies are sent with the request
-    );
+    return api.get("/dashboard"); // Use the `api` instance to make the request
 };
 
 // Campaigns-related endpoints
