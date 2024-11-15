@@ -16,7 +16,7 @@ export const api = axios.create({
 
 // Dashboard API to fetch user details
 export const getUserDetails = async () => {
-    return api.get("/dashboard"); // Use the `api` instance to make the request
+    return api.get("/api/dashboard"); // Use the `api` instance to make the request
 };
 
 // Campaigns-related endpoints
