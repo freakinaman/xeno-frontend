@@ -13,15 +13,15 @@ const Dashboard = () => {
 const fetchUser = async () => {
     try {
         const response = await getUserDetails(); // API call to fetch user details
-        console.log("User data:", response.data); // Add this to debug response
+        console.log("User data fetched:", response.data); // Debug log
         setUser(response.data);
     } catch (err) {
-        console.error("Failed to fetch user:", err.message);
-        console.error(err.response); // Add this to debug the error response
+        console.error("Error fetching user:", err.message, err.response?.data); // Debug error response
     } finally {
         setLoading(false);
     }
 };
+
 
     useEffect(() => {
         fetchUser();
