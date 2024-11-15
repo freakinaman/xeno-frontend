@@ -16,7 +16,7 @@ export const api = axios.create({
 
 // Dashboard API to fetch user details
 export const getUserDetails = async () => {
-    return axios.get(`${API_BASE_URL}/api/dashboard`, { withCredentials: true });
+    return axios.get(`${API_BASE_URL}/dashboard`, { withCredentials: true });
 };
 // Campaigns-related endpoints
 export const getCampaigns = () => api.get("/campaigns");
